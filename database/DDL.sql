@@ -130,3 +130,45 @@ create table historial_evento_reserva (
   detalle varchar(200),
   primary key (id_evento)
 );
+
+-- Propuesta inicial para la autenticación dentro del sistema
+create table rol (
+  id_rol bigint not null,
+  nombre varchar(50),
+  descripcion varchar(100),
+  primary key (id_rol)
+);
+
+create table usuario (
+  id_usuario bigint not null,
+  nombre_usuario varchar(50),
+  email varchar(100),
+  hash_password varchar(255),
+  activo boolean,
+  fecha_creacion datetime,
+  id_rol bigint references rol(id_rol),
+  primary key (id_usuario)
+);
+
+create table autenticacion (
+  id_autenticacion bigint not null,
+  id_usuario bigint references usuario(id_usuario),
+  intento_exitoso boolean,
+  fecha datetime,
+  ip_origen varchar(45),
+  motivo varchar(100),
+  primary key (id_autenticacion)
+);
+
+create table sesion (
+  id_sesion bigint not null,
+  id_usuario bigint references usuario(id_usuario),
+  token varchar(255),
+  fecha_inicio datetime,
+  fecha_fin datetime,
+  ip_origen varchar(45),
+  navegador varchar(100),
+  primary key (id_sesion)
+);
+
+
