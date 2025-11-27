@@ -170,5 +170,6 @@ create table sesion (
   navegador varchar(100),
   primary key (id_sesion)
 );
+-- Considerar el uso de cascadas para la actualización éxitosa en todas las tablas cuya relación no sea PK.
 
 
