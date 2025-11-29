@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+<h1>Registro usuario</h1>
+
+<% if (error) { %>
+    <h3 style="color: red;">Error: <% form.error %></h3>
+<% } %>
+
+<form action="/login">
+    <div>
+        <label for="email"></label>
+        <input name="email" id="email" type="email" required/>
+    </div>
+    <div>
+        <label for="password"></label>
+        <input name="password" id="password" type="password" required min="3" />
+    </div>
+    <input type="submit" value="Enviar">
+</form>
+
+<%- include('partials/footer') %>

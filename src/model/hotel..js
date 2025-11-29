@@ -1,4 +1,3 @@
-
 /**
  * La clase que se le devuelve a un controlador despues de una consulta
  * a la base de datos. 
@@ -11,3 +10,4 @@
 export class Hotel {
     constructor() {}
 }
+

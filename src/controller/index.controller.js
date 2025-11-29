@@ -1,4 +1,4 @@
-// Renderiza el archivo index.ejs
 export const getIndex = (req, res) => {
+    console.log(hola);
     res.render('index');
 }
